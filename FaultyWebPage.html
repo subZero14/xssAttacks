@@ -36,8 +36,26 @@ $(document).ready(function(){
     var a = "<script>alert("MUHAHAHAHAHA!")</script>"
     $("#containsMalScript").html(a);
 
+    //makeCookie("MalCookie", "<script>alert('Muhahahahhaha')</script>");
     });
+
+    $("#containsMalScript").html(getCookie("MalCookie"));
 });
+
+function makeCookie(name, value) {
+  document.cookie = name + "=" + value;
+}
+
+function getCookie(name) {
+    var name = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+}
+
 </script>
 </head>
 <body>
