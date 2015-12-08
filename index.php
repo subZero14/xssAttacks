@@ -6,7 +6,7 @@
 	$keywords="";
 
 	$keywords = isset($_GET["inputKeyword"])? $_GET["inputKeyword"] : '';
-	$check2 = '<script>alert("HELLOO WORLD")</script>';
+	$check3 = '<script>alert("Muhahahaha! Attacked")</script>';
 
-  echo $check2;
+  echo $check3;
 ?>

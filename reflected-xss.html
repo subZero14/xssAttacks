@@ -35,15 +35,16 @@ $(document).ready(function(){
       var inputKeyword = $('#usrInput').val();
       $.ajax({
         type: 'GET',
-        url: 'http://Default-Environment-5kg7pfmawr.elasticbeanstalk.com/index.php',
+        url: 'http://xsssample.elasticbeanstalk.com/index.php',
         data: "{}",
-        dataType: 'json',
+        dataType: '',
         data: {
           inputKeyword:inputKeyword
         },
         success: function(data){
+          console.log("Success");
           var jsonDataObj = data;
-          console.log(jsonDataObj);
+          $('#containsMalScript').html(jsonDataObj);
         }, //closing success
         error: function(jqXHR, exception){
           if (jqXHR.status === 0) {
